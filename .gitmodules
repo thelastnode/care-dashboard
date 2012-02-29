@@ -1,0 +1,3 @@
+[submodule "dashboard/dash/vendor/bootstrap"]
+	path = dashboard/dash/vendor/bootstrap
+	url = git://github.com/twitter/bootstrap.git
