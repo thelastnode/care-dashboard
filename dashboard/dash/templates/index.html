@@ -1,9 +1,70 @@
 <!doctype html>
 <html>
   <head>
-    <title>TODO</title>
+    <title>Dashboard</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css"></link>
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+    <style type="text/css">
+      .nav-tabs > li > a {
+        line-height: 18px;
+      }
+      .row {
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-    <p>TODO</p>
+    <div class="container">
+      <div class="page-header">
+        <ul class="nav nav-pills pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ankit Shankar <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Log out</a></li>
+            </ul>
+          </li>
+        </ul>
+        <h1>Dashboard</h1>
+      </div>
+
+      <ul class="nav nav-tabs">
+        <li><a href="#">Dashboard View 1</a></li>
+        <li class="active"><a href="#">Dashboard View 2</a></li>
+        <li><a href="#">Dashboard View 3</a></li>
+        <li><a href="#">Dashboard View 4</a></li>
+        <li><a href="#"><i class="icon-plus"></i></a></li>
+        <li style="float: right"><a href="#">Edit Dashboards <i class="icon-edit"></i></a></li>
+      </ul>
+
+      <div class="row">
+        <div class="span4">
+          <a href="#"><img src="http://placehold.it/500x500"></img></a>
+        </div>
+        <div class="span4">
+          <a href="#"><img src="http://placehold.it/500x500"></img></a>
+        </div>
+        <div class="span4">
+          <a href="#"><img src="http://placehold.it/500x500"></img></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4">
+          <a href="#"><img src="http://placehold.it/500x500"></img></a>
+        </div>
+        <div class="span4">
+          <a href="#"><img src="http://placehold.it/500x500"></img></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span1 offset11">
+          <a href="#" class="btn pull-right"><i class="icon-plus"></i></a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
