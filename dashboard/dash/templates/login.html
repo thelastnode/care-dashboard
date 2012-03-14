@@ -1,0 +1,45 @@
+<script type="text/template" id="tmpl-login">
+<div class="container">
+
+  <div class="page-header"><h1>CARE Dashboard</h1></div>
+
+  <form method="POST" action="#" class="form-horizontal">
+    <fieldset>
+      <legend>Login</legend>
+
+      <div class="control-group">
+        <label class="control-label" for="username">Username:</label>
+        <div class="controls">
+          <input type="text" id="username" name="username"></input>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="password">Password:</label>
+        <div class="controls">
+          <input type="password" id="password" name="password"></input>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary input-large">Login</button>
+      </div>
+
+    </fieldset>
+  </form>
+
+  <div class="modal fade" id="modal-login-failed" style="display: none">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Login Failed</h3>
+    </div>
+    <div class="modal-body">
+      <p class="message"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn btn-primary">Close</a>
+    </div>
+  </div>
+
+</div>
+</script>
