@@ -21,6 +21,7 @@
     <!-- Views -->
     <script type="text/javascript" src="{{ STATIC_URL }}app/views/login.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}app/views/root.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}app/views/header.js"></script>
 
     {% endblock %}
 
@@ -68,6 +69,7 @@
     {% block body %}
     <!-- Templates -->
     {% include "login.html" %}
+    {% include "header.html" %}
 
     <div id="app"></div>
     {% endblock %}
