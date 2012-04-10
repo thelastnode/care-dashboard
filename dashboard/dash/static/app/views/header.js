@@ -11,7 +11,8 @@ $(function() {
     },
 
     render: function() {
-      this.$el.html(this.template({
+      this.$el.children().detach();
+      this.$el.append(this.template({
         name: window.user.get('first_name') + ' '
           + window.user.get('last_name'),
       }));

@@ -15,7 +15,8 @@ $(function() {
     },
 
     render: function() {
-      this.$el.html(this.template());
+      this.$el.children().detach();
+      this.$el.append(this.template());
       return this;
     },
 
