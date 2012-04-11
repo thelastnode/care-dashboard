@@ -28,4 +28,11 @@ def then_enters_a_name_for_the_dashboard(step, name):
 
 @step(u'Then the user sees a dashboard tab labeled "([^"]*)"')
 def then_the_user_sees_a_dashboard_tab_labeled(step, name):
-    assert False, 'This step must be implemented'
+    def tab_exists(driver):
+        tabs_ul = driver.find_elements_by_css_selector('ul.nav.nav-tabs')
+        assert len(tabs_ul) > 0, 'There must be a navigation tabs list'
+        tab = tabs_ul[0].find_elements_by_link_text(name)
+        return len(tab) == 1
+
+    WebDriverWait(world.browser, 10).until(tab_exists)
+    
