@@ -4,10 +4,15 @@
 
 This is the code repository for the widget dashboard for use by
 [CARE](http://edu.care.org/default.aspx). This document, along with
-the documents in [doc/](./doc), aim to explain the development
-environment, [technical decisions](./doc/technical.md),
-[design decisions](./doc/design.md), and
-[code layout](./doc/layout.md) of this project.
+the documents in
+[doc/](https://github.com/thelastnode/care-dashboard/tree/master/doc),
+aim to explain the development environment, [technical
+decisions](https://github.com/thelastnode/care-dashboard/blob/master/doc/technical.md),
+[design
+decisions](https://github.com/thelastnode/care-dashboard/blob/master/doc/design.md),
+and [code
+layout](https://github.com/thelastnode/care-dashboard/blob/master/doc/design.md)
+of this project.
 
 # Dependencies
 
@@ -61,4 +66,4 @@ log in. Finally, you can run the server with:
 # Adding a feature
 
 For details on how to add a new feature, look at
-[./doc/feature.md](./doc/feature.md)
+[./doc/feature.md](https://github.com/thelastnode/care-dashboard/blob/master/doc/feature.md)
