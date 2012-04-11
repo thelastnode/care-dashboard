@@ -57,3 +57,8 @@ You will also be prompted to create a superuser, which will let you
 log in. Finally, you can run the server with:
 
   $ python manage.py runserver
+
+# Adding a feature
+
+For details on how to add a new feature, look at
+[./doc/feature.md](./doc/feature.md)
