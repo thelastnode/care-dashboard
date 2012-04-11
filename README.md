@@ -11,7 +11,7 @@ decisions](https://github.com/thelastnode/care-dashboard/blob/master/doc/technic
 [design
 decisions](https://github.com/thelastnode/care-dashboard/blob/master/doc/design.md),
 and [code
-layout](https://github.com/thelastnode/care-dashboard/blob/master/doc/design.md)
+layout](https://github.com/thelastnode/care-dashboard/blob/master/doc/layout.md)
 of this project.
 
 # Dependencies
