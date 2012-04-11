@@ -61,7 +61,7 @@ SQLite3 database:
 You will also be prompted to create a superuser, which will let you
 log in. Finally, you can run the server with:
 
-  $ python manage.py runserver
+    $ python manage.py runserver
 
 # Adding a feature
 
