@@ -70,6 +70,9 @@ log in. Finally, you can run the server with:
 
     (env) $ python manage.py runserver
 
+By default, the application can be accessed at
+`http://localhost:8000/`.
+
 # Adding a feature
 
 For details on how to add a new feature, look at
