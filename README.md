@@ -69,7 +69,13 @@ SQLite3 database:
     ...
 
 You will also be prompted to create a superuser, which will let you
-log in. Finally, you can run the server with:
+log in. You can also create a superuser manually with:
+
+    (env) $ python manage.py createsuperuser
+    Username (Leave blank to use 'ankit'): 
+    ...
+
+Finally, you can run the server with:
 
     (env) $ python manage.py runserver
 
