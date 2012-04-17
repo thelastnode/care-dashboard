@@ -17,11 +17,13 @@
 
     <!-- Models -->
     <script type="text/javascript" src="{{ STATIC_URL }}app/models/user.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}app/models/tabs.js"></script>
 
     <!-- Views -->
     <script type="text/javascript" src="{{ STATIC_URL }}app/views/login.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}app/views/root.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}app/views/header.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}app/views/app.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}app/views/root.js"></script>
 
     {% endblock %}
 
@@ -70,6 +72,7 @@
     <!-- Templates -->
     {% include "login.html" %}
     {% include "header.html" %}
+    {% include "app.html" %}
 
     <div id="app"></div>
     {% endblock %}

@@ -9,7 +9,7 @@ $(function() {
     },
 
     render: function() {
-      this.$el.empty();
+      this.$el.children().detach();
       this.active_view.render();
       this.$el.append(this.active_view.$el);
     },
@@ -34,9 +34,8 @@ $(function() {
     },
 
     switchToAppView: function() {
-      // TODO: this is a temporary view, will actually show app in future
       this.offActiveView();
-      this.active_view = new window.Views.Header();
+      this.active_view = new window.Views.App();
       this.active_view.on('logout', this.loggedOut, this);
       this.render();
     },
@@ -44,12 +43,11 @@ $(function() {
     offActiveView: function() {
       if (this.active_view) {
         this.active_view.off();
-        this.active_view.trigger('destroy');
       }
     },
   });
 
-  new window.Views.Root({
-    el: $('#app')
+  var app = new window.Views.Root({
+    el: $('#app'),
   });
 });
