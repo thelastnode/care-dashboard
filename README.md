@@ -52,13 +52,13 @@ Then we activate the virtualenv:
     
 Next, we install the dependencies for the project:
 
-    $ pip install -r requirements.txt
+    (env) $ pip install -r requirements.txt
 
 Now, with the virtualenv activated, we can setup the development
 SQLite3 database:
 
-    $ cd dashboard/
-    $ python manage.py syncdb
+    (env) $ cd dashboard/
+    (env) $ python manage.py syncdb
     Creating tables ...
     Creating table auth_permission
     Creating table auth_group_permissions
@@ -68,7 +68,7 @@ SQLite3 database:
 You will also be prompted to create a superuser, which will let you
 log in. Finally, you can run the server with:
 
-    $ python manage.py runserver
+    (env) $ python manage.py runserver
 
 # Adding a feature
 
