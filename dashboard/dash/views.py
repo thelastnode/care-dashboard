@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
+from django.contrib.auth import logout as auth_logout
 from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
@@ -40,4 +41,11 @@ def login(req):
             'first_name': user.first_name,
             'last_name': user.last_name,
         },
+    }
+
+@json_view
+def logout(req):
+    auth_logout(req)
+    return {
+        'success': True
     }

@@ -20,6 +20,7 @@ $(function() {
 
     logout: function() {
       this.trigger('logout');
+      $.getJSON('/logout');
     },
   });
 });
