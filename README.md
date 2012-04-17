@@ -37,13 +37,16 @@ Clone the repository with git:
 First, we will create the virtualenv (sandbox) in the `env` folder:
 
     $ cd care-dashboard/
-    $ virtualenv -p python2 env/
+    $ virtualenv -p python env/
     Running virtualenv with interpreter /usr/bin/python2
     New python executable in env/bin/python2
     Also creating executable in env/bin/python
     Installing setuptools............................done.
     Installing pip...............done.
 
+On some systems (Arch Linux, for example), the python binary
+(specified by the `-p` flag) for python 2.x is `python2` instead of
+`python`.
     
 Then we activate the virtualenv:
 
