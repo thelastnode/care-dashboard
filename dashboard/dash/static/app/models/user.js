@@ -6,6 +6,7 @@ $(function() {
   window.Models.User = Backbone.Model.extend({
     initialize: function() {
       var raw_user = this.get('raw_user');
+      this.unset('raw_user');
 
       this.set('username', raw_user.username);
       this.set('email', raw_user.email);

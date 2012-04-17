@@ -5,7 +5,12 @@ $(function() {
 
   window.Views.Root = Backbone.View.extend({
     initialize: function() {
-      this.switchToLoginView();
+      var userString = this.getOfflineUser();
+      if (userString) {
+        this.loggedIn(JSON.parse(userString));
+      } else {
+        this.switchToLoginView();
+      }
     },
 
     render: function() {
@@ -18,6 +23,7 @@ $(function() {
       window.user = new window.Models.User({
         raw_user: user,
       });
+      window.Offline.set('login:user', JSON.stringify(window.user));
       this.switchToAppView();
     },
 
@@ -37,6 +43,9 @@ $(function() {
       this.offActiveView();
       this.active_view = new window.Views.App();
       this.active_view.on('logout', this.loggedOut, this);
+      this.active_view.on('logout', function() {
+        window.Offline.clear();
+      });
       this.render();
     },
 
@@ -44,6 +53,10 @@ $(function() {
       if (this.active_view) {
         this.active_view.off();
       }
+    },
+
+    getOfflineUser: function() {
+      return window.Offline.get('login:user');
     },
   });
 
