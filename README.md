@@ -28,8 +28,15 @@ downloaded into a sandbox by virtualenv and pip.
 
 # Setting up the development environment
 
+Clone the repository with git:
+
+    $ git clone git@github.com:thelastnode/care-dashboard.git
+    Cloning into 'care-dashboard'...
+    ...
+
 First, we will create the virtualenv (sandbox) in the `env` folder:
 
+    $ cd care-dashboard/
     $ virtualenv -p python2 env/
     Running virtualenv with interpreter /usr/bin/python2
     New python executable in env/bin/python2
