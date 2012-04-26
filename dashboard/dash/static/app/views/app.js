@@ -57,6 +57,9 @@ $(function() {
       });
 
       this.modal = this.$el.find('.modal');
+
+      var map = new window.Views.Map();
+      this.$el.append(map.$el);
     },
 
     openNewTabModal: function() {

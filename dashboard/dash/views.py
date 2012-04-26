@@ -64,8 +64,19 @@ def dashboards(req):
         }
     
     # otherwise: GET request
-    print Dashboards.objects.get_or_create(user=req.user)[0].raw
     return {
         'dashboards': Dashboards.objects.get_or_create(user=req.user)[0].raw,
     }
     
+@login_required
+@json_view
+def get_data(req):
+    return {
+        'shops': [{
+            'name': 'A1 Shop',
+            'latitude': '33.7267137',
+            'longtitude': '-84.4118112',
+            'owner_name': 'Bob Loblaw',
+            'phone_number': '14045551212',
+        }],
+    }

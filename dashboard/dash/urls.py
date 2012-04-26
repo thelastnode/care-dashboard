@@ -7,4 +7,5 @@ urlpatterns = patterns('dash.views',
     url(r'^logout$', 'logout'),
 
     url(r'^dashboards$', 'dashboards'),
+    url(r'^data$', 'get_data'),
 )
