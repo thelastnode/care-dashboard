@@ -14,14 +14,25 @@ $(function() {
       'submit .modal form': 'submitNewTabModal',
 
       'click ul.nav-tabs li': 'switchActiveTab',
+      'dblclick ul.nav-tabs li': 'deleteActiveTab',
     },
 
     initialize: function() {
-      window.Data.Tabs.on('add remove change', this.render, this);
+      window.Data.Tabs.on('add remove change reset', this.render, this);
+      window.Data.Tabs.on('add remove change reset', window.Data.Tabs.save,
+                          window.Data.Tabs);
       this.header = new window.Views.Header();
 
       // propagate the logout event to the root
       this.header.on('logout', function() { this.trigger('logout'); }, this);
+
+      this.fetchData();
+    },
+
+    fetchData: function() {
+      $.getJSON('/dashboards', function(data) {
+        window.Data.Tabs.reset(JSON.parse(data.dashboards));
+      });
     },
 
     render: function() {
@@ -84,6 +95,19 @@ $(function() {
       src = src.parent();
       window.Data.Tabs.activeIndex = src.index();
       this.render();
+    },
+
+    deleteActiveTab: function(e) {
+      var src = $(e.srcElement);
+      if (src.hasClass('add-dashboard-button')
+          || src.parent().hasClass('add-dashboard-button')) {
+        return;
+      }
+
+      // select parent 'li' instead of 'a' tag to find index
+      src = src.parent();
+      window.Data.Tabs.remove(window.Data.Tabs.at(src.index()));
+      window.Data.Tabs.activeIndex = null;
     },
   });
 });

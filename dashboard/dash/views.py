@@ -1,12 +1,14 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
 from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 from decorators import json_view
+from models import Dashboards
 
 def index(req):
     req.META["CSRF_COOKIE_USED"] = True
@@ -49,3 +51,21 @@ def logout(req):
     return {
         'success': True
     }
+
+@login_required
+@json_view
+def dashboards(req):
+    if req.method == 'POST':
+        d = Dashboards.objects.get_or_create(user=req.user)[0]
+        d.raw = req.POST.get('raw', '[]')
+        d.save()
+        return {
+            'success': True
+        }
+    
+    # otherwise: GET request
+    print Dashboards.objects.get_or_create(user=req.user)[0].raw
+    return {
+        'dashboards': Dashboards.objects.get_or_create(user=req.user)[0].raw,
+    }
+    
