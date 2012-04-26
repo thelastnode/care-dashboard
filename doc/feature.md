@@ -29,7 +29,7 @@ folder.
 Run the tests. You can specify a particular test (so you can avoid
 running the whole test suite) as follows:
 
-    python manage.py harvest dash/features/new_feature.py
+    python manage.py harvest dash/features/new_feature.feature
 
 and ensure the tests do not pass. If they pass, your tests suck.
 
